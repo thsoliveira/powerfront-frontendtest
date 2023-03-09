@@ -18,16 +18,30 @@ function removeMessages() {
   document.getElementById("chatHistory").innerHTML = "";
 }
 
+function scrollToBottom() {
+  document.getElementById("historyBox").scroll({
+    behavior: "smooth",
+    left: 0,
+    top: document.getElementById("historyBox").scrollHeight,
+  });
+}
+
 function onChatReceivedCallback(event) {
   const { datetime, message, from } = event?.detail || {};
 
   appendNewMessage(from, datetime, message);
+
+  //chat-history scroll to bottom
+  scrollToBottom();
 }
 
 function loadData(chats) {
   chats?.forEach(({ from, datetime, message } = {}) => {
     appendNewMessage(from, datetime, message);
   });
+
+  //chat-history scroll to bottom
+  scrollToBottom();
 }
 
 function onLoad() {
@@ -54,5 +68,11 @@ function onLoad() {
         document.getElementById("chatInput").value = "";
       }
     }
+  };
+
+  // clear the chat
+  document.getElementById("close").onclick = function () {
+    chat.clearChatHistory();
+    removeMessages();
   };
 }

@@ -1,28 +1,55 @@
 <html>
+  <head>
+    <title>JS Chat</title>
 
-<head>
-	<title>JS Chat</title>
+    <script src="js/service/chat.js"></script>
+    <script src="js/utils/parse-data.js"></script>
 
-	<script src="js/service/chat.js"></script>
-	<script src="js/utils/parse-data.js"></script>
-	<script src="js/init.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">    
-	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <script src="js/init.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">    
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 
-	<link rel="stylesheet" type="text/css" href="css/chat.css">
+		<link rel="stylesheet" type="text/css" href="css/chat.css" />
+  </head>
 
-</head>
+  <body onLoad="onLoad()">
+    <div id="chatHolder">
+			<div class="chat-wrapper">
+				<div class="operator-header flex">
+					<img class="avatar" src="assets/images/avatar.jpg" alt="">
+					<div class="flex operator-info">
+						<h2 class="operator-name">
+							John Doe
+						</h2>
+						<div class="operator-status">
+							<span class="dot"></span>
+							Online
+						</div>
+					</div>
+					<button id="close">
+						<img src="assets/images/close.svg" alt="">
+					</button>
+				</div>
+				<div id="historyBox" class="chat-history">
+					<ul id="chatHistory">
+					</ul>
+				</div>
+				<div id="liveChat" class="live-chat"></div>
+			</div>
 
-<body onLoad="onLoad()">
-	<h1>JS Chat</h1>
-	<div id="chatHolder">
-		<div id="chatHistory"></div>
-		<div id="liveChat"></div>
-		
-	</div>
-	<textarea id="chatInput" placeholder='Type your question here...'></textarea>
-	<input id='chatSubmit' type="button" value='SEND'></input>
-
-</body>
-
+      <div class="send-bar" id="sendBar">
+        <input
+				type="text"
+				class="chat-input"
+          id="chatInput"
+          placeholder="Type your question here..."
+        ></input>
+        <button class="send-button" id="chatSubmit">
+          <img src="assets/images/send-button.svg" />
+        </button>
+      </div>
+    </div>
+  </body>
 </html>

@@ -73,7 +73,7 @@ var chat = new (function () {
       parsedString.toLowerCase().indexOf("hi") != -1
     ) {
       setTimeout(operatorGreetingChat, 2000);
-    } else if (parsedString.indexOf("?") != -1) {
+    } else if (parsedString.indexOf("&#63;") != -1) {
       setTimeout(operatorAnswerChat, 2000);
     } else {
       setTimeout(operatorChat, 2000);
@@ -85,11 +85,11 @@ var chat = new (function () {
     dispatchChatEvent(randResponse, "operator");
   }
   function operatorAnswerChat() {
-    var randResponse = answers[Math.floor(Math.random() * responses.length)];
+    var randResponse = answers[Math.floor(Math.random() * answers.length)];
     dispatchChatEvent(randResponse, "operator");
   }
   function operatorGreetingChat() {
-    var randResponse = greetings[Math.floor(Math.random() * responses.length)];
+    var randResponse = greetings[Math.floor(Math.random() * greetings.length)];
     dispatchChatEvent(randResponse, "operator");
   }
 
