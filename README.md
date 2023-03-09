@@ -16,11 +16,10 @@
 
 ### Bonus
 
-- Implement responsive design
-- Protect against XSS and other forms of hacking
-- Display the time in the readable format. Be creative
+- Implement responsive design - done
+- Protect against XSS and other forms of hacking - done (?)
+- Display the time in the readable format. Be creative - done
 - Add some animations when the messages are added to the history
-- Fix the message textarea and button to the bottom of the page
-- Make the User Experience as simple as possible
-- Convert the code to not rely on jQuery
-- Added listeners and defined some helper functions in init.js.
+- Fix the message textarea and button to the bottom of the page - done
+- Make the User Experience as simple as possible - done
+- Convert the code to not rely on jQuery - done
