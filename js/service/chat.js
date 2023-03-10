@@ -106,18 +106,6 @@ var chat = new (function () {
     raiseEvent("chatreceived", event);
   }
 
-  function dispatchChatEvent(msg, from) {
-    var event = new CustomEvent("chatreceived", {
-      detail: { datetime: new Date().toISOString(), message: msg, from: from },
-    });
-    saveChatHistory({
-      datetime: new Date().toISOString(),
-      message: msg,
-      from: from,
-    });
-    raiseEvent("chatreceived", event);
-  }
-
   this.addListener = function (eventName, callback) {
     var events = _events;
     callbacks = events[eventName] = events[eventName] || [];
